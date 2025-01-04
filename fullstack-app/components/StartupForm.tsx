@@ -31,7 +31,7 @@ const StartupForm = () => {
             console.log(result);
             if(result.status == 'SUCCESS'){
                 toast({
-                    title:"Error",
+                    title:"Success",
                     description:"Your pitch has been created successfully",
                 })
 
@@ -58,8 +58,6 @@ const StartupForm = () => {
                 variant:"destructive"
             })
             return {...prevState,error:"An Unexpected error has occured",status:"ERROR"};
-
-        }finally{
 
         }
 
