@@ -3,6 +3,8 @@ import SearchForm from "../../components/SearchForm";
 import { STARTUPS_QUERY } from "@/sanity/lib/queries";
 import { sanityFetch, SanityLive } from "@/sanity/lib/live";
 import { auth } from "@/auth";
+
+
 export default async function Home({searchParams}:{
   searchParams:Promise<{query?:string}>
 }) {
@@ -29,7 +31,7 @@ export default async function Home({searchParams}:{
         {query ? `Search results for "${query}"`: 'All Startups'}
       </p>
       <ul className="mt-7 card_grid">
-        {posts?.length > 0 ?(posts.map((post:StartupTypeCard,index:number)=>(
+        {posts?.length > 0 ?(posts.map((post:StartupTypeCard)=>(
           <StartupCard key={post?._id} post={post}/>
         ))
       ):(
